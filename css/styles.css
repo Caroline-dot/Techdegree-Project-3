@@ -1,50 +1,111 @@
- /* #23967F
- #730071
- #EA7317 */
-
-
 * {
     box-sizing: border-box;
     }
 
 body  {
-    margin: 0;
+    margin: 0 auto;
     max-width: 768px;
     font-family: 'Open Sans', sans-serif;
-    background-color: #730071;
-    color: #fff;
+    color: white;
     }
 
 h1 {
     background-color: #ea7317;
     color: #730071;
-    margin: 0;
     padding: 10px 0;
-}
+    margin: 0;
+    }
+
+h2 {
+    line-height: .2;
+    font-size: 20px;
+    }
 
 section {
     text-align: center;
-    margin: 0;
-}
+    }
 
-h3,
+legend {
+    font-weight: 800;
+    font-size: 20px;
+    padding-top: 10px;
+    }
+
+h2,
 p,
 form,
 span {
-    padding: 0 10px;
-}
+    padding: 10px;
+    }
+
+p {
+    padding-top: 0;
+    padding-bottom: 20px;
+    }
 
 input {
+    transition: background-color 4s;
+}
+
+select,
+input {
     border: 1px solid white;
+    color: black;
+    }
+
+textarea {
+    width: 100%;
+    height: 150px;
+    margin-top: 15px;
+    }
+
+button {
+    width: 100%;
+    height: 45px;
+    background-color: #ea7317;
+    border: 0;
+    }
+
+span {
+    display: inherit;
+    text-align: center;
+    font-size: 12px;
+    }
+
+.container {
+    background-color: #730071;
+    }
+
+.newsletter p {
+    text-align: justify;
+    padding-top: 0;
+    }
+
+.first {
+    width: 100%;
+    height: 7px;
+    border-top: 3px solid #ea7317;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid #ea7317;
+    }
+
+.second {
+    width: 100%;
+    border: 1px solid #ea7317;
     }
 
 .contact-details,
 .newsletter {
     margin: 0;
-    padding: 35px 0;
+    padding: 20px 0;
     border: none;
     }
-    
+
+input:focus {
+    background-color: #f7f8ab;
+}
+
 /* The selector is targeting the <div> children of the .contact-info <fieldset> with the class of .flex-pair. 
 Again this is to ensure that only the elements within this specific fieldset are affected by our CSS rules. */
 
@@ -57,21 +118,38 @@ Again this is to ensure that only the elements within this specific fieldset are
     margin-bottom: 10px;
     }
 
-.contact-details input {
+.contact-details input,
+.contact-details select {
     height: 50px;
     margin-bottom: 15px;
     }
 
-/* Set the max-width of the Telephone field to be 50% the width of the other inputs. 
-NOTE: max-width overrides flex-basis. */
+.format {
+    margin: 10px 0;
+}
+
+[placeholder] {
+    text-align: right;
+    font-style: italic;
+    font-size: 15px;
+    }
+
+input[type=address] {
+    text-align: left;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    margin-bottom: 15px;
+    }
 
 #zip {
     max-width: 50%;
     }
 
-================================
+/* ================================
 Media Queries
-================================
+================================ */
 
 /* Then add our first rule to change how the label & input flex children are oriented. 
 From a stacked on top of each other column layout to a side by side on same line row layout. 
@@ -83,11 +161,11 @@ To achieve this we just need to set flex-direction: row; on the flex parent .fle
         flex-direction: row;
     }
 
-
 /* For the input field we want to add flex-grow: 1; so that the input fields length will take up it’s 
 full available flex-basis space. In this case, that would be 75% of the width of the flex parent div. 
 Flex-basis works very similar to the width: property at setting the length of the element, but for flex items. */
     
+    .contact-details select,
     .contact-details input {
         flex-grow: 1;
         flex-basis: 75%;
@@ -103,10 +181,7 @@ align the labels with the input fields. Which is another feature of flexbox. */
         margin: auto 0;
     }
 
-/* Change the Telephone input field to max-width: 25%;. That way it only takes up 25% the width of the other 
-input elements, on the larger screen sizes. */
-
     #phone {
-        max-width: 25%;
+        width: 100%;
     }
 }
