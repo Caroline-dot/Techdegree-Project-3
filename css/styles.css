@@ -21,7 +21,7 @@ h2 {
     font-size: 20px;
     }
 
-section {
+header {
     text-align: center;
     }
 
@@ -47,15 +47,15 @@ input {
     transition: background-color 4s;
 }
 
+select {
+    font-style: italic;
+}
+
 select,
 input {
     border: 1px solid white;
     color: black;
     }
-
-.italic option {
-    font-style: italic;
-}
 
 textarea {
     width: 100%;
@@ -84,6 +84,10 @@ span {
     text-align: justify;
     padding-top: 0;
     }
+
+.format {
+    padding: 0;
+}
 
 .first {
     width: 100%;
@@ -128,24 +132,22 @@ Again this is to ensure that only the elements within this specific fieldset are
     margin-bottom: 15px;
     }
 
-.format {
-    margin: 10px 0;
-}
-
 [placeholder] {
     text-align: right;
     font-style: italic;
     font-size: 15px;
+    padding-right: 10px;
+    overflow: visible;
     }
-
-input[type=address] {
-    text-align: left;
-}
 
 input[type=radio],
 input[type=checkbox] {
     margin-bottom: 15px;
     }
+
+label[for=interest] {
+    display: block;
+}
 
 #zip {
     max-width: 50%;
