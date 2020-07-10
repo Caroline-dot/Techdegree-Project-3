@@ -190,4 +190,8 @@ align the labels with the input fields. Which is another feature of flexbox. */
     #phone {
         width: 100%;
     }
+
+    #zip {
+        max-width: 25%;
+    }
 }
